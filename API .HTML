@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    let city = prompt("please enter the city name")
+    // 0dcd16035a2bfbd1fba8d26a376b7c7a
+axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e0f99c494c2ce394a18cc2fd3f100543&units=metric`)
+  .then(function (response) {
+    // handle success
+    console.log(response.data.main.temp);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+</script>
+</html>
